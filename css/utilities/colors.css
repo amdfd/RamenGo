@@ -4,6 +4,7 @@
   --color-2: #FF4E42;
   --color-3: #FFC024;
   --color-4: #FAFAED;
+  --color-w: #FFFFFF;
 }
 
 .color-0 {
@@ -24,4 +25,8 @@
 
 .color-4 {
   color: var(--color-4);
+}
+
+.color-w {
+  color: var(--color-w);
 }
