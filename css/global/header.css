@@ -1,0 +1,33 @@
+body, html {
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.hero-image {
+  background-image: url("../../assets/images/capa.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 60%;
+  left: 31%;
+  max-width: 24ch;
+  word-wrap: break-word;
+  color: white;
+}
+
+.hero-text p {
+  font: 500 1rem/1.5rem "M Plus Rounded 1c", sans-serif;;
+  padding-bottom: 24px;
+}
