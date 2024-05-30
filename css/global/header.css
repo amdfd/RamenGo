@@ -28,6 +28,6 @@ body, html {
 }
 
 .hero-text p {
-  font: 500 1rem/1.5rem "M Plus Rounded 1c", sans-serif;;
+  font: 500 1rem/1.5 "M Plus Rounded 1c", sans-serif;;
   padding-bottom: 24px;
 }
