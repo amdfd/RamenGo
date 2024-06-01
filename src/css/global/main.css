@@ -29,11 +29,10 @@
   background-color: var(--color-4);
   box-shadow: 0px 4px 12px 0px rgba(224, 219, 191, 0.6);
   width: 320px;
-  height: 316px;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 .card-item:hover {
@@ -42,6 +41,7 @@
 
 .card-item.selected {
   background-color: var(--color-1);
+  transition: background-color 0.3s ease;
 }
 
 .card-item img {
@@ -49,10 +49,6 @@
   height: 104px;
   padding-top: 48px;
   padding-bottom: 14px;
-}
-
-.card-item.selected img {
-  content: url(../../assets/icons/active/active-salt.svg);
 }
 
 .item-name {
@@ -69,6 +65,8 @@
   font: 500 0.9rem/1 "M Plus Rounded 1c", sans-serif;
   color: var(--color-0);
   padding-bottom: 36px;
+  padding-right: 32px;
+  padding-left: 32px;
 }
 
 .item-description.selected {
@@ -78,7 +76,7 @@
 .item-price {
   font: 900 1.25rem/1.5 "M Plus Rounded 1c", sans-serif;
   color: var(--color-2);
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .item-price.selected {
