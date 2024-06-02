@@ -106,7 +106,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
           if (response.status === 201) {
             console.log('Order sent successfully:', response.data);
-            alert('Order sent successfully');
+            const description = encodeURIComponent(response.data.description);
+            const image = encodeURIComponent(response.data.image);
+            window.location.href = `./src/pages/successPage.html?description=${description}&image=${image}`;
           } else {
             throw new Error('Unexpected status code: ' + response.status);
           }

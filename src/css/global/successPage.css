@@ -1,0 +1,63 @@
+.success-container {
+  display: flex;
+  height: 100%;
+}
+
+.success-left, .success-right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.success-left {
+  background: url(../../assets/patterns/pattern-azul.png);
+}
+
+.success-left p {
+  font: 900 1.25rem/1.5 "M Plus Rounded 1c", sans-serif;
+  color: var(--color-w);
+}
+
+.success-left h2 {
+  font: 900 2rem "M Plus Rounded 1c", sans-serif;
+  color: var(--color-3);
+}
+
+.success-right {
+  background: var(--color-4);
+}
+
+.success-right .success-order {
+  padding-bottom: 18px;
+  width: 65px;
+  height: 71px;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.success-order {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.success-right .thank-you {
+  font: 900 1.25rem/1.5 "M Plus Rounded 1c", sans-serif;
+  color: var(--color-3);
+}
+
+.success-right h1 {
+  font: 900 2rem/2.5 "M Plus Rounded 1c", sans-serif;
+  color: var(--color-2);
+  padding-bottom: 4px;
+}
+
+.success-right p {
+  font: 500 1rem/1.5 "M Plus Rounded 1c", sans-serif;
+  color: var(--color-0);
+  padding-bottom: 32px;
+}
