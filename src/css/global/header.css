@@ -17,24 +17,57 @@ body, html {
 }
 
 .hero-image {
-  background-image: url("../../assets/images/capa.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../../assets/patterns/pattern-vermelha.png");
+  height: 85vh;
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
   position: relative;
 }
 
-.hero-text {
+.hero-illustration {
   position: absolute;
-  top: 60%;
-  left: 31%;
-  max-width: 24ch;
-  word-wrap: break-word;
-  color: white;
+  z-index: 1;
 }
 
-.hero-text p {
-  font: 500 1rem/1.5 "M Plus Rounded 1c", sans-serif;;
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.hero-heading-container {
+  display: flex;
+  position: relative;
+  top: 180px;
+  left: -320px;
+}
+
+.hero-section .hero-heading-text {
+  writing-mode: vertical-rl;
+  font: 900 3rem "M Plus Rounded 1c", sans-serif;	
+  color: var(--color-3);
+}
+
+.hero-content-container {
+  position: relative;
+  top: 150px;
+  left: -320px;
+}
+
+.hero-section .hero-heading-title {
+  font: 900 10rem "M Plus Rounded 1c", sans-serif;
+  color: var(--color-w);
+}
+
+.hero-section .hero-description {
+  font: 500 1rem/1.5 "M Plus Rounded 1c", sans-serif;
+  color: var(--color-w);
+  max-width: 24ch;
+  word-wrap: break-word;
   padding-bottom: 24px;
 }
