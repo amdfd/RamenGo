@@ -9,6 +9,13 @@ body, html {
   padding-left: 40px;
 }
 
+.success-header {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+}
+
 .hero-image {
   background-image: url("../../assets/images/capa.jpg");
   height: 100%;
