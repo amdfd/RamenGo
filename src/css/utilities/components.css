@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+.button.disabled {
+  background: var(--color-5);
+  color: var(--color-w);
+}
+
 .button.arrow {
   display: flex;
   align-items: center;
@@ -25,6 +30,10 @@
   margin-left: 24px;
   background: url("../../assets/icons/active/active-arrow.svg");
   transition: transform 0.2s;
+}
+
+.button.arrow.disabled::after {
+  background: url("../../assets/icons/inactive/inactive-arrow.svg");
 }
 
 .button.arrow:hover::after {

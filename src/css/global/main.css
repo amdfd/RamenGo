@@ -183,10 +183,19 @@
     padding: 16px;
   }
   .main-text p {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .cards {
     gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: start;
+    padding: 24px;
+  }
+  .cards > .card-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
   }
   .card-item {
     width: 288px;
@@ -203,8 +212,18 @@
   .item-description {
     font-size: 1rem;;
   }
-  item-price {
+  .item-price {
     font-size: 1.25rem;
+  }
+  .cards-carousel {
+    position: relative;
+    width: 100%;
+  }
+  .cards-inner-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
   .center {
     padding-top: 48px;
