@@ -15,6 +15,7 @@
 .button.disabled {
   background: var(--color-5);
   color: var(--color-w);
+  cursor: default;
 }
 
 .button.arrow {
@@ -28,16 +29,20 @@
   width: 20px;
   height: 16px;
   margin-left: 24px;
-  background: url("../../assets/icons/active/active-arrow.svg");
+  background: url("../../assets/icons/active-arrow.svg");
   transition: transform 0.2s;
 }
 
 .button.arrow.disabled::after {
-  background: url("../../assets/icons/inactive/inactive-arrow.svg");
+  background: url("../../assets/icons/inactive-arrow.svg");
 }
 
 .button.arrow:hover::after {
   transform: translateX(4px);
+}
+
+.button.arrow.disabled:hover::after {
+  transform: none;
 }
 
 @media (max-width: 1130px) {

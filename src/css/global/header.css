@@ -18,7 +18,7 @@ body, html {
 
 .hero-image {
   background-image: url("../../assets/patterns/pattern-vermelha.png");
-  height: 90vh;
+  height: 100vh;
   z-index: -1;
 }
 
