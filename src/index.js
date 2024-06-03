@@ -1,6 +1,9 @@
 import { fetchBroths, fetchProteins, postOrder } from './api';
 
-function createCard(item, cardsContainer) {
+let selectedBroth = null;
+let selectedProtein = null;
+
+function createCard(item, cardsContainer, type) {
   const card = document.createElement('div');
   card.className = 'card-item';
 
@@ -20,7 +23,6 @@ function createCard(item, cardsContainer) {
         otherCard.classList.remove('selected');
         const img = otherCard.querySelector('img');
         img.src = JSON.parse(otherCard.dataset.item).imageInactive;
-        img.classList.remove('selected');
 
         const itemName = otherCard.querySelector('.item-name');
         itemName.classList.remove('selected');
@@ -33,24 +35,42 @@ function createCard(item, cardsContainer) {
       }
     });
 
-    card.classList.toggle('selected');
+    const isSelected = card.classList.toggle('selected');
 
     const img = card.querySelector('img');
-    img.classList.toggle('selected');
-
     const itemName = card.querySelector('.item-name');
-    itemName.classList.toggle('selected');
-
     const itemDescription = card.querySelector('.item-description');
-    itemDescription.classList.toggle('selected');
-
     const itemPrice = card.querySelector('.item-price');
-    itemPrice.classList.toggle('selected');
 
-    if (card.classList.contains('selected')) {
+    if (isSelected) {
       img.src = JSON.parse(card.dataset.item).imageActive;
+      itemName.classList.add('selected');
+      itemDescription.classList.add('selected');
+      itemPrice.classList.add('selected');
+
+      if (type === 'broth') {
+        selectedBroth = item;
+      } else if (type === 'protein') {
+        selectedProtein = item;
+      }
     } else {
       img.src = JSON.parse(card.dataset.item).imageInactive;
+      itemName.classList.remove('selected');
+      itemDescription.classList.remove('selected');
+      itemPrice.classList.remove('selected');
+
+      if (type === 'broth') {
+        selectedBroth = null;
+      } else if (type === 'protein') {
+        selectedProtein = null;
+      }
+    }
+
+    const placeOrderButton = document.getElementById('place-order-button');
+    if (selectedBroth && selectedProtein) {
+      placeOrderButton.classList.remove('disabled');
+    } else {
+      placeOrderButton.classList.add('disabled');
     }
   });
 
@@ -61,7 +81,7 @@ fetchBroths().then((data) => {
   const cardsContainer = document.querySelectorAll('.cards')[0];
 
   data.forEach((item) => {
-    const card = createCard(item, cardsContainer);
+    const card = createCard(item, cardsContainer, 'broth');
     cardsContainer.appendChild(card);
   });
 });
@@ -70,7 +90,7 @@ fetchProteins().then((data) => {
   const cardsContainer = document.querySelectorAll('.cards')[1];
 
   data.forEach((item) => {
-    const card = createCard(item, cardsContainer);
+    const card = createCard(item, cardsContainer, 'protein');
     cardsContainer.appendChild(card);
   });
 });

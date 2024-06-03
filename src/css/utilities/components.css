@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+.button.disabled {
+  background: var(--color-5);
+  color: var(--color-w);
+}
+
 .button.arrow {
   display: flex;
   align-items: center;
@@ -27,6 +32,31 @@
   transition: transform 0.2s;
 }
 
+.button.arrow.disabled::after {
+  background: url("../../assets/icons/inactive/inactive-arrow.svg");
+}
+
 .button.arrow:hover::after {
   transform: translateX(4px);
+}
+
+@media (max-width: 1130px) {
+  .button {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .button {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 660px) {
+  .button#btn-order-now {
+    display: none;
+  }
+  .button {
+    padding: 16px 20px;
+  }
 }
